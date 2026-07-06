@@ -1,0 +1,31 @@
+# ============================================================
+#  Public repo — only ship what the live site needs.
+# ============================================================
+
+# ---- Heavy source / camera footage (GitHub rejects >100 MB) ----
+*.mov
+*.MOV
+# Unoptimized camera-photo folders (anchored so /assets/images/ is safe)
+/fotos/
+/photos/
+/raw/
+
+# ---- Internal work documents (not for the public repo) ----
+/prompt-*.md
+/PLAN.md
+/*.pdf
+
+# ---- Duplicate originals left in the root ----
+#  The site loads everything from /assets/images/ and /video/,
+#  so these root copies are redundant. Anchored with a leading "/"
+#  so the identically-named files inside /assets/images/ are kept.
+/gallery-*-598x399.jpg
+/kids-1500x551.jpg
+/logo-2.gif
+
+# ---- Local tooling / secrets ----
+.claude/settings.local.json
+
+# ---- OS cruft ----
+Thumbs.db
+.DS_Store
