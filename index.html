@@ -66,16 +66,8 @@
   <header class="navbar" id="top">
     <div class="container nav-inner">
       <a class="brand" href="#top" aria-label="A & G Happy Kids Hair Cuts — home">
-        <svg class="brand-logo" viewBox="0 0 260 56" role="img" aria-label="A & G Happy Kids Hair Cuts logo" xmlns="http://www.w3.org/2000/svg">
-          <g class="brand-scissors" fill="none" stroke="#2b6fd6" stroke-width="3.5" stroke-linecap="round">
-            <circle cx="11" cy="14" r="6" />
-            <circle cx="11" cy="40" r="6" />
-            <line x1="16" y1="18" x2="46" y2="36" />
-            <line x1="16" y1="36" x2="46" y2="18" />
-          </g>
-          <text x="54" y="24" class="brand-text-1">A &amp; G HAPPY KIDS</text>
-          <text x="54" y="44" class="brand-text-2">HAIR CUTS · FAMILY SALON</text>
-        </svg>
+        <img class="brand-logo" src="assets/images/logo-haircuts.png" width="900" height="341"
+             alt="A & G Happy Kids Hair Cuts — Children's & Family Salon" />
       </a>
 
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
@@ -111,7 +103,6 @@
         <p class="hero-sub">Fun, gentle, stress-free haircuts for kids and the whole family — with an organic, safe product line and a friendly smile every visit.</p>
         <div class="hero-actions">
           <a class="btn btn-cta" href="https://www.fresha.com/book-now/a-g-happy-kids-haircuts-til3auw0/all-offer?id=866865&amp;pId=815151" target="_blank" rel="noopener">Book Appointment</a>
-          <a class="btn btn-ghost btn-ghost-light" href="#services">View services</a>
         </div>
         <ul class="hero-badges" aria-label="Highlights">
           <li>🌿 Organic &amp; safe products</li>
@@ -119,6 +110,10 @@
           <li>✂️ First-haircut keepsakes</li>
         </ul>
       </div>
+      <button class="hero-sound" id="hero-sound" type="button" aria-pressed="false" aria-label="Turn sound on">
+        <span class="hs-icon" aria-hidden="true">🔇</span>
+        <span class="hs-label">Tap for sound</span>
+      </button>
     </section>
 
     <!-- ============ SERVICES ============ -->
@@ -146,9 +141,9 @@
           <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">👑</span><h3>Updo's</h3><p class="svc-desc">Parties, communions &amp; recitals.</p><span class="svc-price">$40</span></article>
           <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">💆‍♀️</span><h3>Shampoo &amp; Style</h3><span class="svc-price">$45</span></article>
           <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">🌬️</span><h3>Blow Dry Style</h3><span class="svc-price">$40</span></article>
-          <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">🪢</span><h3>Braids</h3><span class="svc-price">$20</span></article>
+          <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">🪢</span><h3>Braids</h3><span class="svc-price">$25+</span></article>
           <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">🧔</span><h3>Men Cuts</h3><span class="svc-price">$45</span></article>
-          <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">🪒</span><h3>Beard</h3><span class="svc-price">$10</span></article>
+          <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">🪒</span><h3>Beard</h3><span class="svc-price">$20</span></article>
         </div>
 
         <div class="services-cta reveal">
@@ -169,6 +164,7 @@
             <li>Friendly, kid-focused environment</li>
             <li>Gentle, no-rush experience</li>
             <li>Families &amp; adults welcome too</li>
+            <li>English &amp; Spanish spoken · Se habla español</li>
           </ul>
         </div>
         <div class="about-media reveal">
@@ -267,8 +263,11 @@
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container footer-inner">
-      <p class="footer-brand">A &amp; G Happy Kids Hair Cuts</p>
-      <p class="footer-rel">Sister salon: <a href="http://www.happykidscuts.com" target="_blank" rel="noopener">Happy Kids Cuts — Scarsdale, NY</a></p>
+      <div class="footer-logo">
+        <img src="assets/images/logo-haircuts.png" width="900" height="341" loading="lazy"
+             alt="A & G Happy Kids Hair Cuts — Children's & Family Salon" />
+      </div>
+      <p class="footer-rel">Sister salons: <a href="http://www.happykidscuts.com" target="_blank" rel="noopener">Happy Kids Cuts — Scarsdale, NY</a> · A&amp;G Happy Kids Chappaqua</p>
       <p class="footer-copy">© Copyright 2019 – 2026 Happy Kids Cuts Stamford — All Rights Reserved</p>
     </div>
   </footer>

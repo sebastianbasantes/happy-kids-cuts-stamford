@@ -28,7 +28,9 @@
   /* ---------- Image sets ---------- */
   // High-quality featured photos (carousel)
   const carouselImages = [];
+  const carouselSkip = [2, 3]; // removed staff/team group photos
   for (let i = 1; i <= 20; i++) {
+    if (carouselSkip.includes(i)) continue;
     carouselImages.push(`assets/images/slide-${String(i).padStart(2, "0")}.jpg`);
   }
   // Small matrix photos
@@ -186,6 +188,23 @@
   if (heroVideo && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     heroVideo.removeAttribute("autoplay");
     heroVideo.pause();
+  }
+
+  /* ---------- Hero sound toggle ---------- */
+  const soundBtn = document.getElementById("hero-sound");
+  if (soundBtn && heroVideo) {
+    const icon = soundBtn.querySelector(".hs-icon");
+    const label = soundBtn.querySelector(".hs-label");
+    soundBtn.addEventListener("click", function () {
+      const turnOn = heroVideo.muted;      // currently muted -> turn sound on
+      heroVideo.muted = !turnOn;
+      if (turnOn) heroVideo.play().catch(function () {});
+      soundBtn.classList.toggle("is-on", turnOn);
+      soundBtn.setAttribute("aria-pressed", String(turnOn));
+      soundBtn.setAttribute("aria-label", turnOn ? "Turn sound off" : "Turn sound on");
+      icon.textContent = turnOn ? "🔊" : "🔇";
+      label.textContent = turnOn ? "Sound on" : "Tap for sound";
+    });
   }
 
   /* ---------- Floating book button (show after hero) ---------- */

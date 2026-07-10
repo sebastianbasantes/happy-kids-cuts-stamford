@@ -71,9 +71,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.12; margin: 0 0 .4em;
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; min-height: 68px; gap: 1rem; }
 .brand { display: flex; align-items: center; }
-.brand-logo { height: 42px; width: auto; }
-.brand-text-1 { font-family: var(--font-head); font-weight: 800; font-size: 17px; fill: var(--red); }
-.brand-text-2 { font-family: var(--font-head); font-weight: 700; font-size: 9.5px; letter-spacing: .06em; fill: var(--ink); }
+.brand-logo { height: 50px; width: auto; display: block; }
 
 .nav-menu ul { display: flex; align-items: center; gap: .35rem; list-style: none; margin: 0; padding: 0; }
 .nav-menu a {
@@ -116,8 +114,8 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.12; margin: 0 0 .4em;
   /* Tinte azul-marino de marca (--ink 35,49,74) en vez de negro puro,
      para combinar con la paleta clara y alegre de la página. */
   background:
-    radial-gradient(ellipse at center, rgba(20,30,52,0.38) 0%, rgba(20,30,52,0.74) 100%),
-    linear-gradient(180deg, rgba(20,30,52,0.55) 0%, rgba(20,30,52,0.25) 45%, rgba(20,30,52,0.68) 100%);
+    radial-gradient(ellipse at center, rgba(20,30,52,0.20) 0%, rgba(20,30,52,0.52) 100%),
+    linear-gradient(180deg, rgba(20,30,52,0.42) 0%, rgba(20,30,52,0.12) 45%, rgba(20,30,52,0.48) 100%);
 }
 .hero-content {
   position: relative;
@@ -149,6 +147,19 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.12; margin: 0 0 .4em;
 }
 .btn-ghost-light { background: rgba(255,255,255,0.12); color: #fff; border-color: rgba(255,255,255,0.7); }
 .btn-ghost-light:hover { background: #fff; color: var(--blue); }
+.hero-sound {
+  position: absolute; bottom: 1.2rem; right: 1.2rem; z-index: 3;
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.4); color: #fff;
+  font-family: var(--font-head); font-weight: 700; font-size: .9rem;
+  padding: .55rem .95rem; border-radius: 999px; cursor: pointer;
+  backdrop-filter: blur(6px); transition: background .15s, transform .15s;
+}
+.hero-sound:hover { background: rgba(255,255,255,0.28); transform: translateY(-2px); }
+.hero-sound:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.hero-sound .hs-icon { font-size: 1.15rem; line-height: 1; }
+.hero-sound.is-on { background: var(--red); border-color: var(--red); }
+.hero-sound.is-on:hover { background: var(--red-d); }
 
 /* ---------- Sections ---------- */
 .section { padding: 4.5rem 0; }
@@ -251,7 +262,8 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.12; margin: 0 0 .4em;
 /* ---------- Footer ---------- */
 .footer { background: var(--ink); color: #cdd6e6; padding: 2.5rem 0; text-align: center; }
 .footer-inner { display: grid; gap: .5rem; }
-.footer-brand { font-family: var(--font-head); font-weight: 800; font-size: 1.3rem; color: #fff; margin: 0; }
+.footer-logo { justify-self: center; background: #fff; padding: .7rem 1.1rem; border-radius: 16px; box-shadow: var(--shadow-sm); }
+.footer-logo img { height: 54px; width: auto; display: block; }
 .footer-rel a { color: var(--yellow); }
 .footer-copy { font-size: .9rem; color: #9aa7be; margin: .4rem 0 0; }
 
