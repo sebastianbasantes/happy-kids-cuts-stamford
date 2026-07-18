@@ -7,11 +7,22 @@
   /* ---------- Mobile nav ---------- */
   const toggle = document.querySelector(".nav-toggle");
   const menu = document.getElementById("nav-menu");
+  const navbar = document.querySelector(".navbar");
+
+  // La navbar es transparente sobre el hero; se vuelve sólida al hacer scroll
+  // o mientras el menú móvil está abierto, para que los enlaces sigan legibles.
+  function updateNav() {
+    const solid = window.scrollY > 24 || (menu && menu.classList.contains("open"));
+    if (navbar) navbar.classList.toggle("solid", solid);
+  }
+  window.addEventListener("scroll", updateNav, { passive: true });
+  updateNav();
 
   function closeMenu() {
     menu.classList.remove("open");
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-label", "Open menu");
+    updateNav();
   }
 
   if (toggle && menu) {
@@ -19,6 +30,7 @@
       const open = menu.classList.toggle("open");
       toggle.setAttribute("aria-expanded", String(open));
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      updateNav();
     });
     menu.addEventListener("click", function (e) {
       if (e.target.closest("a")) closeMenu();
@@ -28,7 +40,7 @@
   /* ---------- Image sets ---------- */
   // High-quality featured photos (carousel)
   const carouselImages = [];
-  const carouselSkip = [2, 3]; // removed staff/team group photos
+  const carouselSkip = [2, 3, 6]; // removed staff/team group photos (2,3) and slide-06
   for (let i = 1; i <= 20; i++) {
     if (carouselSkip.includes(i)) continue;
     carouselImages.push(`assets/images/slide-${String(i).padStart(2, "0")}.jpg`);
@@ -215,5 +227,53 @@
       fab.classList.toggle("show", !entries[0].isIntersecting);
     }, { threshold: 0 });
     fabIo.observe(hero);
+  }
+
+  /* ---------- Business hours: highlight today + open/closed status ---------- */
+  const hoursList = document.getElementById("hours-list");
+  const hoursStatus = document.getElementById("hours-status");
+  if (hoursList) {
+    const now = new Date();
+    const dow = now.getDay();                       // 0 = Sun … 6 = Sat
+    const mins = now.getHours() * 60 + now.getMinutes();
+    const items = Array.from(hoursList.querySelectorAll("li"));
+    const fmt = function (m) {
+      const h = Math.floor(m / 60);
+      const ap = h >= 12 ? "pm" : "am";
+      let hh = h % 12; if (hh === 0) hh = 12;
+      return hh + ":" + String(m % 60).padStart(2, "0") + " " + ap;
+    };
+
+    let openNow = false, closeAt = null;
+    const today = items.find(function (li) { return Number(li.dataset.dow) === dow; });
+    if (today) {
+      today.classList.add("today");
+      const chip = document.createElement("span");
+      chip.className = "today-chip";
+      chip.textContent = "Today";
+      today.querySelector(".day").appendChild(chip);
+      const o = Number(today.dataset.open), c = Number(today.dataset.close);
+      if (mins >= o && mins < c) { openNow = true; closeAt = c; }
+    }
+
+    if (hoursStatus) {
+      if (openNow) {
+        hoursStatus.classList.add("is-open");
+        hoursStatus.innerHTML = '<span class="dot"></span>Open now · until ' + fmt(closeAt);
+      } else {
+        let when = "", openMin = null;
+        for (let d = 0; d < 7; d++) {
+          const li = items.find(function (x) { return Number(x.dataset.dow) === (dow + d) % 7; });
+          if (!li) continue;
+          const o = Number(li.dataset.open);
+          if (d === 0) { if (mins < o) { when = "today"; openMin = o; break; } continue; }
+          when = d === 1 ? "tomorrow" : li.querySelector(".day").textContent.trim();
+          openMin = o; break;
+        }
+        hoursStatus.classList.add("is-closed");
+        hoursStatus.innerHTML = '<span class="dot"></span>' +
+          (openMin != null ? "Closed · opens " + when + " " + fmt(openMin) : "Closed today");
+      }
+    }
   }
 })();

@@ -62,6 +62,23 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- ============ ICON SPRITE (Lucide-style, inline SVG) ============ -->
+  <svg class="icon-sprite" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <defs>
+      <symbol id="i-scissors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></symbol>
+      <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></symbol>
+      <symbol id="i-droplet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .962 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.962 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></symbol>
+      <symbol id="i-crown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/><path d="M5 21h14"/></symbol>
+      <symbol id="i-wind" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/></symbol>
+      <symbol id="i-waves" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    </defs>
+  </svg>
+
   <!-- ============ NAVBAR ============ -->
   <header class="navbar" id="top">
     <div class="container nav-inner">
@@ -91,29 +108,43 @@
 
   <main id="main">
     <!-- ============ HERO ============ -->
-    <section id="hero" aria-labelledby="hero-title">
+    <section id="hero" aria-label="A & G Happy Kids Hair Cuts — salon video">
       <video id="hero-video" autoplay muted loop playsinline preload="metadata"
              poster="video/hero-poster.jpg" aria-hidden="true">
         <source src="video/hero.mp4" type="video/mp4" />
       </video>
       <div class="hero-overlay" aria-hidden="true"></div>
-      <div class="container hero-content reveal">
-        <p class="eyebrow eyebrow-light">Children's &amp; Family Salon · Stamford, CT</p>
-        <h1 id="hero-title">Life is more beautiful when you meet the&nbsp;<span class="hl">right hairdresser!</span></h1>
-        <p class="hero-sub">Fun, gentle, stress-free haircuts for kids and the whole family — with an organic, safe product line and a friendly smile every visit.</p>
+      <div class="hero-content">
         <div class="hero-actions">
-          <a class="btn btn-cta" href="https://www.fresha.com/book-now/a-g-happy-kids-haircuts-til3auw0/all-offer?id=866865&amp;pId=815151" target="_blank" rel="noopener">Book Appointment</a>
+          <a class="btn btn-cta btn-lg" href="https://www.fresha.com/book-now/a-g-happy-kids-haircuts-til3auw0/all-offer?id=866865&amp;pId=815151" target="_blank" rel="noopener">Book Appointment</a>
         </div>
-        <ul class="hero-badges" aria-label="Highlights">
-          <li>🌿 Organic &amp; safe products</li>
-          <li>💛 Special-needs friendly</li>
-          <li>✂️ First-haircut keepsakes</li>
-        </ul>
       </div>
       <button class="hero-sound" id="hero-sound" type="button" aria-pressed="false" aria-label="Turn sound on">
         <span class="hs-icon" aria-hidden="true">🔇</span>
         <span class="hs-label">Tap for sound</span>
       </button>
+    </section>
+
+    <!-- ============ WELCOME / INTRO ============ -->
+    <section class="section section-alt intro" id="welcome" aria-labelledby="welcome-title">
+      <div class="container intro-inner">
+        <div class="intro-copy reveal">
+          <p class="eyebrow">Children's &amp; Family Salon · Stamford, CT</p>
+          <h1 id="welcome-title">Life is more beautiful when you meet the&nbsp;<span class="hl">right hairdresser!</span></h1>
+          <p class="intro-sub">Fun, gentle, stress-free haircuts for kids and the whole family — with an organic, safe product line and a friendly smile every visit.</p>
+          <ul class="intro-badges" aria-label="Highlights">
+            <li><svg aria-hidden="true" style="color:var(--green)"><use href="#i-leaf"/></svg>Organic &amp; safe products</li>
+            <li><svg aria-hidden="true" style="color:var(--red)"><use href="#i-heart"/></svg>Special-needs friendly</li>
+            <li><svg aria-hidden="true" style="color:var(--blue)"><use href="#i-scissors"/></svg>First-haircut keepsakes</li>
+          </ul>
+        </div>
+        <ul class="intro-list reveal" aria-label="Why families choose us">
+          <li>Friendly, kid-focused environment</li>
+          <li>Gentle, no-rush experience</li>
+          <li>Families &amp; adults welcome too</li>
+          <li>English &amp; Spanish spoken · Se habla español</li>
+        </ul>
+      </div>
     </section>
 
     <!-- ============ SERVICES ============ -->
@@ -127,23 +158,23 @@
 
         <div class="services-grid">
           <article class="svc-card featured reveal">
-            <span class="svc-ico" aria-hidden="true">⭐</span>
+            <svg class="svc-ico" aria-hidden="true"><use href="#i-award"/></svg>
             <h3>First Haircut</h3>
             <p class="svc-desc">A keepsake to remember — includes a lock of hair + certificate.</p>
             <span class="svc-price">$37</span>
           </article>
-          <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">✂️</span><h3>Kids Haircut (Boys)</h3><span class="svc-price">$37</span></article>
-          <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">🎀</span><h3>Girl Haircut (12 &amp; Under)</h3><span class="svc-price">$37</span></article>
-          <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">💈</span><h3>Fade / Shape Up</h3><span class="svc-price">$40</span></article>
-          <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">🧴</span><h3>Shampoo / Hair Wash</h3><span class="svc-price">$10</span></article>
-          <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">✂️</span><h3>Bang Trim</h3><span class="svc-price">$16</span></article>
-          <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">💇‍♀️</span><h3>Women's Cut &amp; Style</h3><span class="svc-price">$55</span></article>
-          <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">👑</span><h3>Updo's</h3><p class="svc-desc">Parties, communions &amp; recitals.</p><span class="svc-price">$40</span></article>
-          <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">💆‍♀️</span><h3>Shampoo &amp; Style</h3><span class="svc-price">$45</span></article>
-          <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">🌬️</span><h3>Blow Dry Style</h3><span class="svc-price">$40</span></article>
-          <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">🪢</span><h3>Braids</h3><span class="svc-price">$25+</span></article>
-          <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">🧔</span><h3>Men Cuts</h3><span class="svc-price">$45</span></article>
-          <article class="svc-card reveal"><span class="svc-ico" aria-hidden="true">🪒</span><h3>Beard</h3><span class="svc-price">$20</span></article>
+          <article class="svc-card reveal"><svg class="svc-ico" aria-hidden="true"><use href="#i-scissors"/></svg><h3>Kids Haircut (Boys)</h3><span class="svc-price">$37</span></article>
+          <article class="svc-card reveal"><svg class="svc-ico" aria-hidden="true"><use href="#i-scissors"/></svg><h3>Girl Haircut (12 &amp; Under)</h3><span class="svc-price">$37</span></article>
+          <article class="svc-card reveal"><svg class="svc-ico" aria-hidden="true"><use href="#i-scissors"/></svg><h3>Fade / Shape Up</h3><span class="svc-price">$40</span></article>
+          <article class="svc-card reveal"><svg class="svc-ico" aria-hidden="true"><use href="#i-droplet"/></svg><h3>Shampoo / Hair Wash</h3><span class="svc-price">$10</span></article>
+          <article class="svc-card reveal"><svg class="svc-ico" aria-hidden="true"><use href="#i-scissors"/></svg><h3>Bang Trim</h3><span class="svc-price">$16</span></article>
+          <article class="svc-card reveal"><svg class="svc-ico" aria-hidden="true"><use href="#i-sparkles"/></svg><h3>Women's Cut &amp; Style</h3><span class="svc-price">$55</span></article>
+          <article class="svc-card reveal"><svg class="svc-ico" aria-hidden="true"><use href="#i-crown"/></svg><h3>Updo's</h3><p class="svc-desc">Parties, communions &amp; recitals.</p><span class="svc-price">$40</span></article>
+          <article class="svc-card reveal"><svg class="svc-ico" aria-hidden="true"><use href="#i-droplet"/></svg><h3>Shampoo &amp; Style</h3><span class="svc-price">$45</span></article>
+          <article class="svc-card reveal"><svg class="svc-ico" aria-hidden="true"><use href="#i-wind"/></svg><h3>Blow Dry Style</h3><span class="svc-price">$40</span></article>
+          <article class="svc-card reveal"><svg class="svc-ico" aria-hidden="true"><use href="#i-waves"/></svg><h3>Braids</h3><span class="svc-price">$25+</span></article>
+          <article class="svc-card reveal"><svg class="svc-ico" aria-hidden="true"><use href="#i-scissors"/></svg><h3>Men Cuts</h3><span class="svc-price">$45</span></article>
+          <article class="svc-card reveal"><svg class="svc-ico" aria-hidden="true"><use href="#i-scissors"/></svg><h3>Beard</h3><span class="svc-price">$20</span></article>
         </div>
 
         <div class="services-cta reveal">
@@ -157,15 +188,10 @@
       <div class="container about-inner">
         <div class="about-copy reveal">
           <p class="eyebrow">About us</p>
-          <h2 id="about-title">A salon kids actually love</h2>
-          <p>For over a decade we've turned haircut day into the easy part. Our stylist <strong>Gloria</strong> and the team make every child feel comfortable — from nervous first-timers to teens who know exactly what they want.</p>
-          <p>We use an <strong>organic product line with safe ingredients</strong>, and we welcome <strong>children with special needs</strong> with the patience and care they deserve.</p>
-          <ul class="about-list">
-            <li>Friendly, kid-focused environment</li>
-            <li>Gentle, no-rush experience</li>
-            <li>Families &amp; adults welcome too</li>
-            <li>English &amp; Spanish spoken · Se habla español</li>
-          </ul>
+          <h2 id="about-title">Our Story</h2>
+          <p>It all began 22 years ago when I arrived in this wonderful country with a suitcase full of dreams and hopes. Today, we can proudly say that our salon, specialized in haircuts for children, has grown and transformed into a family space where parents, siblings, and grandparents eagerly come to A &amp; G Happy Kids Haircuts.</p>
+          <p><strong>Gloria</strong> and her team have managed to create a special and unique environment for children with special needs, as well as for those who are more sensitive or anxious about their first haircut. Over time, many of them have grown up and continue to be our most loyal customers.</p>
+          <p>I invite you to keep creating memories and new experiences with us. We appreciate all the recommendations that help us improve in what we do. Thank you!</p>
         </div>
         <div class="about-media reveal">
           <img src="assets/images/about-salon.jpg" width="1600" height="1280" loading="lazy" decoding="async"
@@ -202,17 +228,19 @@
     <section class="section section-alt" id="hours" aria-labelledby="hours-title">
       <div class="container">
         <header class="section-head reveal">
+          <span class="hours-badge-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span>
           <p class="eyebrow">Plan your visit</p>
           <h2 id="hours-title">Business Hours</h2>
+          <p class="hours-status" id="hours-status" role="status" aria-live="polite"></p>
         </header>
-        <ul class="hours-list reveal">
-          <li><span class="day">Monday</span><span class="time">10:00 am – 6:00 pm</span></li>
-          <li><span class="day">Tuesday</span><span class="time">10:00 am – 6:00 pm</span></li>
-          <li><span class="day">Wednesday</span><span class="time">10:00 am – 6:00 pm</span></li>
-          <li><span class="day">Thursday</span><span class="time">10:00 am – 6:00 pm</span></li>
-          <li><span class="day">Friday</span><span class="time">10:00 am – 6:00 pm</span></li>
-          <li><span class="day">Saturday</span><span class="time">9:00 am – 5:00 pm</span></li>
-          <li><span class="day">Sunday</span><span class="time">9:00 am – 4:00 pm</span></li>
+        <ul class="hours-list reveal" id="hours-list">
+          <li data-dow="1" data-open="600" data-close="1080"><span class="hours-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span><span class="hours-info"><span class="day">Monday</span><span class="time">10:00 am – 6:00 pm</span></span></li>
+          <li data-dow="2" data-open="600" data-close="1080"><span class="hours-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span><span class="hours-info"><span class="day">Tuesday</span><span class="time">10:00 am – 6:00 pm</span></span></li>
+          <li data-dow="3" data-open="600" data-close="1080"><span class="hours-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span><span class="hours-info"><span class="day">Wednesday</span><span class="time">10:00 am – 6:00 pm</span></span></li>
+          <li data-dow="4" data-open="600" data-close="1080"><span class="hours-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span><span class="hours-info"><span class="day">Thursday</span><span class="time">10:00 am – 6:00 pm</span></span></li>
+          <li data-dow="5" data-open="600" data-close="1080"><span class="hours-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span><span class="hours-info"><span class="day">Friday</span><span class="time">10:00 am – 6:00 pm</span></span></li>
+          <li data-dow="6" data-open="540" data-close="1020"><span class="hours-ico" aria-hidden="true"><svg><use href="#i-sun"/></svg></span><span class="hours-info"><span class="day">Saturday</span><span class="time">9:00 am – 5:00 pm</span></span></li>
+          <li data-dow="0" data-open="540" data-close="960"><span class="hours-ico" aria-hidden="true"><svg><use href="#i-sun"/></svg></span><span class="hours-info"><span class="day">Sunday</span><span class="time">9:00 am – 4:00 pm</span></span></li>
         </ul>
       </div>
     </section>
@@ -280,7 +308,7 @@
     <button class="lb-next" aria-label="Next image">&#8250;</button>
   </div>
 
-  <a class="fab-book" href="https://www.fresha.com/book-now/a-g-happy-kids-haircuts-til3auw0/all-offer?id=866865&amp;pId=815151" target="_blank" rel="noopener" aria-label="Book an appointment">Book ✂️</a>
+  <a class="fab-book" href="https://www.fresha.com/book-now/a-g-happy-kids-haircuts-til3auw0/all-offer?id=866865&amp;pId=815151" target="_blank" rel="noopener" aria-label="Book an appointment">Book <svg class="fab-ico" aria-hidden="true"><use href="#i-scissors"/></svg></a>
 
   <script src="assets/js/main.js" defer></script>
 </body>
