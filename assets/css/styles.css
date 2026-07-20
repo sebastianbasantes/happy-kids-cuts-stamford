@@ -7,7 +7,11 @@
   --blue:   #2b6fd6;
   --blue-d: #1f55a8;
   --yellow: #ffc83d;
-  --green:  #36c98f;
+  /* Verde y naranja tomados del logo (muestreados del PNG) */
+  --green:    #00b050;   /* relleno / iconos */
+  --green-d:  #0a7a3d;   /* texto sobre blanco (AA 5.4:1) */
+  --orange:   #f4511e;   /* relleno / iconos */
+  --orange-d: #c8410f;   /* texto sobre blanco (AA 5.0:1) */
   --ink:    #23314a;
   --muted:  #5d6b82;
   --bg:     #ffffff;
@@ -62,6 +66,11 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.12; margin: 0 0 .4em;
   text-transform: uppercase; font-size: .82rem; color: var(--blue);
   margin: 0 0 .4rem;
 }
+/* Cada seccion toma un color del logo para repartir la paleta por la pagina */
+#services .eyebrow { color: var(--orange-d); }
+#about .eyebrow    { color: var(--green-d); }
+#gallery .eyebrow  { color: var(--orange-d); }
+#hours .eyebrow    { color: var(--green-d); }
 
 /* ---------- Navbar ---------- */
 .navbar {
@@ -190,7 +199,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.12; margin: 0 0 .4em;
   border-radius: var(--radius); box-shadow: var(--shadow);
 }
 .intro-list li { position: relative; padding-left: 2rem; font-family: var(--font-head); font-weight: 700; color: var(--ink); }
-.intro-list li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 800; }
+.intro-list li::before { content: "✓"; position: absolute; left: 0; color: var(--green-d); font-weight: 800; }
 
 /* ---------- Services ---------- */
 .services-grid {
@@ -202,12 +211,17 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.12; margin: 0 0 .4em;
   display: flex; flex-direction: column; gap: .35rem;
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
-.svc-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--blue); }
+.svc-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--svc); }
 .svc-card h3 { font-size: 1.18rem; margin: 0; }
-.svc-ico { width: 30px; height: 30px; color: var(--blue); }
-.svc-card.featured .svc-ico { color: var(--red); }
+/* Cada tarjeta toma un color del logo: lo usan el icono, el borde en hover y el precio */
+.svc-card { --svc: var(--blue); }
+.svc-card:nth-child(4n+1) { --svc: var(--red); }
+.svc-card:nth-child(4n+2) { --svc: var(--orange); }
+.svc-card:nth-child(4n+3) { --svc: var(--green-d); }
+.svc-card:nth-child(4n+4) { --svc: var(--blue); }
+.svc-ico { width: 30px; height: 30px; color: var(--svc); }
 .svc-desc { color: var(--muted); font-size: .95rem; margin: 0; }
-.svc-price { margin-top: auto; font-family: var(--font-head); font-weight: 800; font-size: 1.5rem; color: var(--red); }
+.svc-price { margin-top: auto; font-family: var(--font-head); font-weight: 800; font-size: 1.5rem; color: var(--svc); }
 .svc-card.featured { background: linear-gradient(140deg, #fff 0%, #fff4f5 100%); border-color: var(--red); grid-column: span 1; }
 .services-cta { text-align: center; margin-top: 2.2rem; }
 
@@ -268,16 +282,32 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.12; margin: 0 0 .4em;
 .gallery-item:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
 
 /* ---------- Hours ---------- */
-.hours-list { max-width: 420px; margin: 0 auto; list-style: none; padding: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden; }
-.hours-list li { display: flex; align-items: center; gap: .95rem; padding: .95rem 1.35rem; }
-.hours-list li:nth-child(odd) { background: var(--bg-alt); }
-.hours-ico { display: grid; place-items: center; width: 36px; height: 36px; flex: none; border-radius: 50%; background: rgba(43,111,214,.10); color: var(--blue); transition: background .2s, color .2s; }
-.hours-ico svg { width: 19px; height: 19px; }
-.hours-info { display: flex; flex-direction: column; line-height: 1.25; }
-.hours-list .day { font-family: var(--font-head); font-weight: 700; }
-.hours-list .time { color: var(--muted); font-weight: 600; font-size: .95rem; font-variant-numeric: tabular-nums; }
-/* Header clock badge */
-.hours-badge-ico { display: grid; place-items: center; width: 56px; height: 56px; margin: 0 auto .9rem; border-radius: 50%; background: rgba(43,111,214,.10); color: var(--blue); }
+/* Tira HORIZONTAL: los 7 dias uno al lado del otro, tarjetas blancas */
+.hours-week {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: .8rem;
+}
+/* Entre semana = VERDE del logo, fin de semana = NARANJA del logo */
+.hours-week li {
+  --accent: var(--green); --accent-d: var(--green-d); --accent-rgb: 0,176,80;
+  display: flex; flex-direction: column; align-items: center; gap: .45rem; text-align: center;
+  background: #fff; border: 1px solid var(--line); border-radius: 16px;
+  border-top: 3px solid rgba(var(--accent-rgb), .55);
+  padding: 1.05rem .55rem 1.15rem; box-shadow: var(--shadow-sm);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.hours-week li:nth-child(n+6) { --accent: var(--orange); --accent-d: var(--orange-d); --accent-rgb: 244,81,30; }
+.hours-week li:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.hd-ico {
+  display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%;
+  background: rgba(var(--accent-rgb), .14); color: var(--accent-d);
+  transition: background .2s, color .2s;
+}
+.hd-ico svg { width: 21px; height: 21px; }
+.hours-week .day { font-family: var(--font-head); font-weight: 700; font-size: .95rem; }
+.hours-week .time { color: var(--muted); font-weight: 600; font-size: .82rem; line-height: 1.35; font-variant-numeric: tabular-nums; }
+/* Header clock badge (verde del logo) */
+.hours-badge-ico { display: grid; place-items: center; width: 56px; height: 56px; margin: 0 auto .9rem; border-radius: 50%; background: rgba(0,176,80,.13); color: var(--green-d); }
 .hours-badge-ico svg { width: 28px; height: 28px; }
 /* Open / closed status pill (filled by JS) */
 .hours-status {
@@ -291,15 +321,20 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.12; margin: 0 0 .4em;
 .hours-status.is-open .dot { background: var(--green); box-shadow: 0 0 0 3px rgba(54,201,143,.22); }
 .hours-status.is-closed { color: var(--red-d); background: rgba(255,77,94,.10); }
 .hours-status.is-closed .dot { background: var(--red); }
-/* Today's row highlight */
-.hours-list li.today { background: linear-gradient(90deg, rgba(43,111,214,.12), rgba(43,111,214,.02)); }
-.hours-list li.today .day { color: var(--blue); }
-.hours-list li.today .hours-ico { background: var(--blue); color: #fff; }
+/* Hoy: el color del dia se vuelve solido */
+.hours-week li.today { border-color: var(--accent); box-shadow: 0 10px 24px rgba(var(--accent-rgb), .25); }
+.hours-week li.today .hd-ico { background: var(--accent); color: #fff; }
+.hours-week li.today .day { color: var(--accent-d); }
+.hours-week li.today .today-chip { background: var(--accent); }
 .today-chip {
-  margin-left: .6rem; font-family: var(--font-head); font-size: .68rem; font-weight: 800;
-  text-transform: uppercase; letter-spacing: .05em; color: #fff; background: var(--blue);
-  padding: .12rem .5rem; border-radius: 999px; vertical-align: middle;
+  display: block; margin: .2rem auto 0; width: fit-content;
+  font-family: var(--font-head); font-size: .66rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .05em; color: #fff; background: var(--orange);
+  padding: .12rem .5rem; border-radius: 999px;
 }
+/* La tira se reparte en filas parejas al angostarse */
+@media (max-width: 1000px) { .hours-week { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 640px)  { .hours-week { grid-template-columns: repeat(2, 1fr); gap: .6rem; } }
 
 /* ---------- Contact ---------- */
 .contact-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.5rem; align-items: start; }
@@ -317,6 +352,31 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.12; margin: 0 0 .4em;
 .footer-inner { display: grid; gap: .5rem; }
 .footer-logo { justify-self: center; background: #fff; padding: .7rem 1.1rem; border-radius: 16px; box-shadow: var(--shadow-sm); }
 .footer-logo img { height: 54px; width: auto; display: block; }
+/* Contacto con iconos (verde / naranja / amarillo del logo) */
+.footer-contact {
+  list-style: none; margin: .8rem 0 .2rem; padding: 0;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: .55rem 1.6rem;
+}
+.footer-contact li { display: inline-flex; align-items: center; gap: .5rem; }
+.footer-contact a { color: #cdd6e6; }
+.footer-contact a:hover { color: #fff; text-decoration: underline; }
+.fc-ico { width: 18px; height: 18px; flex: none; }
+.footer-contact li:nth-child(1) .fc-ico { color: var(--green); }
+.footer-contact li:nth-child(2) .fc-ico { color: var(--orange); }
+.footer-contact li:nth-child(3) .fc-ico { color: var(--yellow); }
+/* Redes sociales */
+.footer-social { display: flex; justify-content: center; gap: .7rem; margin: .5rem 0 .3rem; }
+.footer-social a {
+  display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%;
+  background: rgba(255,255,255,.10); color: #fff;
+  transition: background .2s ease, transform .2s ease;
+}
+.footer-social a svg { width: 21px; height: 21px; }
+.footer-social a:hover { transform: translateY(-3px); }
+.footer-social a:nth-child(1):hover { background: var(--orange); }
+.footer-social a:nth-child(2):hover { background: var(--blue); }
+.footer-social a:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+
 .footer-rel a { color: var(--yellow); }
 .footer-copy { font-size: .9rem; color: #9aa7be; margin: .4rem 0 0; }
 

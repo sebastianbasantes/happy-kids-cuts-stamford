@@ -26,7 +26,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- ?v= fuerza a navegadores y CDN a bajar la version nueva tras cada cambio.
+       IMPORTANTE: subir este numero cada vez que se edite styles.css o main.js. -->
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260720" />
 
   <!-- Structured data: HairSalon -->
   <script type="application/ld+json">
@@ -76,6 +78,11 @@
       <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
       <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
       <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.4-8 12-8 12s-8-7.6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+      <symbol id="i-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
     </defs>
   </svg>
 
@@ -133,9 +140,9 @@
           <h1 id="welcome-title">Life is more beautiful when you meet the&nbsp;<span class="hl">right hairdresser!</span></h1>
           <p class="intro-sub">Fun, gentle, stress-free haircuts for kids and the whole family — with an organic, safe product line and a friendly smile every visit.</p>
           <ul class="intro-badges" aria-label="Highlights">
-            <li><svg aria-hidden="true" style="color:var(--green)"><use href="#i-leaf"/></svg>Organic &amp; safe products</li>
+            <li><svg aria-hidden="true" style="color:var(--green-d)"><use href="#i-leaf"/></svg>Organic &amp; safe products</li>
             <li><svg aria-hidden="true" style="color:var(--red)"><use href="#i-heart"/></svg>Special-needs friendly</li>
-            <li><svg aria-hidden="true" style="color:var(--blue)"><use href="#i-scissors"/></svg>First-haircut keepsakes</li>
+            <li><svg aria-hidden="true" style="color:var(--orange)"><use href="#i-scissors"/></svg>First-haircut keepsakes</li>
           </ul>
         </div>
         <ul class="intro-list reveal" aria-label="Why families choose us">
@@ -233,14 +240,14 @@
           <h2 id="hours-title">Business Hours</h2>
           <p class="hours-status" id="hours-status" role="status" aria-live="polite"></p>
         </header>
-        <ul class="hours-list reveal" id="hours-list">
-          <li data-dow="1" data-open="600" data-close="1080"><span class="hours-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span><span class="hours-info"><span class="day">Monday</span><span class="time">10:00 am – 6:00 pm</span></span></li>
-          <li data-dow="2" data-open="600" data-close="1080"><span class="hours-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span><span class="hours-info"><span class="day">Tuesday</span><span class="time">10:00 am – 6:00 pm</span></span></li>
-          <li data-dow="3" data-open="600" data-close="1080"><span class="hours-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span><span class="hours-info"><span class="day">Wednesday</span><span class="time">10:00 am – 6:00 pm</span></span></li>
-          <li data-dow="4" data-open="600" data-close="1080"><span class="hours-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span><span class="hours-info"><span class="day">Thursday</span><span class="time">10:00 am – 6:00 pm</span></span></li>
-          <li data-dow="5" data-open="600" data-close="1080"><span class="hours-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span><span class="hours-info"><span class="day">Friday</span><span class="time">10:00 am – 6:00 pm</span></span></li>
-          <li data-dow="6" data-open="540" data-close="1020"><span class="hours-ico" aria-hidden="true"><svg><use href="#i-sun"/></svg></span><span class="hours-info"><span class="day">Saturday</span><span class="time">9:00 am – 5:00 pm</span></span></li>
-          <li data-dow="0" data-open="540" data-close="960"><span class="hours-ico" aria-hidden="true"><svg><use href="#i-sun"/></svg></span><span class="hours-info"><span class="day">Sunday</span><span class="time">9:00 am – 4:00 pm</span></span></li>
+        <ul class="hours-week reveal" id="hours-list">
+          <li data-dow="1" data-open="600" data-close="1080"><span class="hd-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span><span class="day">Monday</span><span class="time">10:00 am – 6:00 pm</span></li>
+          <li data-dow="2" data-open="600" data-close="1080"><span class="hd-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span><span class="day">Tuesday</span><span class="time">10:00 am – 6:00 pm</span></li>
+          <li data-dow="3" data-open="600" data-close="1080"><span class="hd-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span><span class="day">Wednesday</span><span class="time">10:00 am – 6:00 pm</span></li>
+          <li data-dow="4" data-open="600" data-close="1080"><span class="hd-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span><span class="day">Thursday</span><span class="time">10:00 am – 6:00 pm</span></li>
+          <li data-dow="5" data-open="600" data-close="1080"><span class="hd-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span><span class="day">Friday</span><span class="time">10:00 am – 6:00 pm</span></li>
+          <li data-dow="6" data-open="540" data-close="1020"><span class="hd-ico" aria-hidden="true"><svg><use href="#i-sun"/></svg></span><span class="day">Saturday</span><span class="time">9:00 am – 5:00 pm</span></li>
+          <li data-dow="0" data-open="540" data-close="960"><span class="hd-ico" aria-hidden="true"><svg><use href="#i-sun"/></svg></span><span class="day">Sunday</span><span class="time">9:00 am – 4:00 pm</span></li>
         </ul>
       </div>
     </section>
@@ -295,6 +302,17 @@
         <img src="assets/images/logo-haircuts.png" width="900" height="341" loading="lazy"
              alt="A & G Happy Kids Hair Cuts — Children's & Family Salon" />
       </div>
+      <ul class="footer-contact">
+        <li><svg class="fc-ico" aria-hidden="true"><use href="#i-pin"/></svg><a href="https://www.google.com/maps?q=53+High+Ridge+Rd,+Stamford,+CT+06905" target="_blank" rel="noopener">53 High Ridge Rd, Stamford, CT 06905</a></li>
+        <li><svg class="fc-ico" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+12038909888">203.890.9888</a></li>
+        <li><svg class="fc-ico" aria-hidden="true"><use href="#i-message"/></svg><a href="sms:+12038264848">203.826.4848</a></li>
+      </ul>
+
+      <div class="footer-social">
+        <a href="https://www.instagram.com/happy_kids_haircuts" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
+        <a href="https://www.facebook.com/HappyKidsCuts/" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true"><use href="#i-facebook"/></svg></a>
+      </div>
+
       <p class="footer-rel">Sister salons: <a href="http://www.happykidscuts.com" target="_blank" rel="noopener">Happy Kids Cuts — Scarsdale, NY</a> · A&amp;G Happy Kids Chappaqua</p>
       <p class="footer-copy">© Copyright 2019 – 2026 Happy Kids Cuts Stamford — All Rights Reserved</p>
     </div>
@@ -310,6 +328,6 @@
 
   <a class="fab-book" href="https://www.fresha.com/book-now/a-g-happy-kids-haircuts-til3auw0/all-offer?id=866865&amp;pId=815151" target="_blank" rel="noopener" aria-label="Book an appointment">Book <svg class="fab-ico" aria-hidden="true"><use href="#i-scissors"/></svg></a>
 
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/main.js?v=20260720" defer></script>
 </body>
 </html>
